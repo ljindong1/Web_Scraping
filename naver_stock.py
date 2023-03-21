@@ -22,5 +22,5 @@ for page in range(1, 2):
         if len(columns) <= 1:
             continue
         data = [column.get_text().strip() for column in columns]
-        # print(data)
+        print(data)
         writer.writerow(data)

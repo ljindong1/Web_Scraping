@@ -25,3 +25,5 @@ for movie in movies:
     # print(movie)
     title = movie.find("div", attrs={"class":"hP61id"}).get_text()
     print(title)
+
+# browser.quit()

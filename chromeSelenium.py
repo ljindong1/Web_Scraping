@@ -22,4 +22,4 @@ time.sleep(3)
 print(browser.page_source)
 
 # browser.close()
-# browser.quit()
+browser.quit()
