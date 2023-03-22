@@ -48,10 +48,16 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 #     soup
 
 for i, keyword in enumerate(df['name'].tolist()):
+    
     # 검색 url 만들기
-    naver_map_search_url = f'https://map.naver.com/v5/search/{keyword}/place'  
+    # naver_map_search_url = f'https://map.naver.com/v5/search/{keyword}/place'  
+    naver_map_search_url = f'https://map.naver.com/v5/search/중화로/place'  
+
     # 검색 url 접속 = 검색하기
     driver.get(naver_map_search_url)  
+
+    with open("page.html", "w", encoding="utf8") as f:
+        f.write(driver.page_source)
     
     time.sleep(2) 
 
@@ -59,14 +65,50 @@ for i, keyword in enumerate(df['name'].tolist()):
     iframe = driver.find_element(By.ID, "searchIframe")
     driver.switch_to.frame(iframe)
 
-    # iframe 요소 내부의 HTML 정보 스크래핑
-    # iframe_html = driver.page_source
-    # soup = BeautifulSoup(iframe_html, "html.parser")
-
-    # driver.switch_to.frame("searchIframe")
-
     time.sleep(1) 
+
+    searched_list = driver.find_elements(By.CSS_SELECTOR, ".VLTHu.OW9LQ")
+
+    for i, item in enumerate(searched_list):
+        # element = item.find_element((By.CLASS_NAME, 'P7gyV'))
+        element = WebDriverWait(item, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, 'P7gyV')))
+        element.click()
+
+        time.sleep(2)       
+        print(driver.current_url)
+
+        soup = BeautifulSoup(driver.page_source, "html.parser")
+        # with open("page.html", "w", encoding="utf8") as f:
+        #     f.write(soup.prettify())
+
+        naver_name = soup.find_all("span", attrs={"class":"place_bluelink"})[i].get_text()
+        # # naver_name = soup.find_element(By.CLASS_NAME, "place_bluelink").get_text()
+        print(naver_name)
+ 
+
+        input("next?") + ' '
+
         
+        # print(driver.page_source)
+
+        # naver_name1 = driver.find_element(By.CLASS_NAME, "place_bluelink YwYLL")
+        # naver_name1 = driver.find_element(By.CSS_SELECTOR, ".place_bluelink.YwYLL")
+
+        # naver_name1 = driver.find_element(By.CSS_SELECTOR, ".place_bluelink.YwYLL")
+
+        # soup = BeautifulSoup(driver.page_source, "html.parser")
+        # with open("detailpage.html", "w", encoding="utf8") as f:
+        #     # f.write(res.text)
+        #     f.write(soup.prettify())
+
+        # naver_name = item.find_element(By.CLASS_NAME, "place_bluelink").text
+        # naver_addr = soup.find("span", attrs={"class":"LDgIH"}).get_text()
+        # print(naver_name, naver_addr)
+        # break
+
+    
+    break
+
     try:     
         #식당 정보가 있다면 첫번째 식당의 url을 가져오기
         
@@ -88,6 +130,8 @@ for i, keyword in enumerate(df['name'].tolist()):
         print('none') 
     
 driver.close()
+
+sys.exit()
 
 #식당명과 url이 잘 얻어져왔는지 확인하기
 print(df)
