@@ -1,0 +1,685 @@
+<html lang="ko">
+ <head>
+  <title>
+   염창식당 검색 - 네이버 지도 - 네이버 지도
+  </title>
+  <meta charset="utf-8"/>
+  <meta content="origin" name="Referrer"/>
+  <meta content="text/javascript" http-equiv="Content-Script-Type"/>
+  <meta content="text/css" http-equiv="Content-Style-Type"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="공간을 검색합니다. 생활을 연결합니다. 장소, 버스, 지하철, 도로 등 모든 공간의 정보를 하나의 검색으로 연결한 새로운 지도를 만나보세요." name="description"/>
+  <meta content="AO_6MCsaxSfiydw-JSF8cCpFrYPwZDiEo40pMwIwl7Q" name="google-site-verification"/>
+  <meta content="website" property="og:type"/>
+  <meta content="네이버 지도" property="og:site_name"/>
+  <meta content="네이버 지도" property="og:title"/>
+  <meta content="https://map.pstatic.net/res/file/content/global/static/naver/og_map.png" property="og:image"/>
+  <meta content="공간을 검색합니다. 생활을 연결합니다. 장소, 버스, 지하철, 도로 등 모든 공간의 정보를 하나의 검색으로 연결 한 새로운 지도를 만나보세요." property="og:description"/>
+  <meta content="https://map.pstatic.net/res/file/content/global/static/naver/og_map.png" property="twitter:image"/>
+  <meta content="공간을 검색합니다. 생활을 연결합니다. 장소, 버스, 지하철, 도로 등 모든 공간의 정보를 하나의 검색으로 연결 한 새로운 지도를 만나보세요." property="twitter:description"/>
+  <meta content="summary_large_image" property="twitter:card"/>
+  <!-- base url -->
+  <base href="/v5/"/>
+  <!-- Configured Head Tags  -->
+  <link href="assets/icon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+  <link href="assets/icon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+  <link href="assets/icon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+  <link href="assets/icon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+  <link href="assets/icon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="assets/icon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="assets/icon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+  <link href="assets/icon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+  <link href="assets/icon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+  <!--<link rel="icon" type="image/png" sizes="192x192" href="assets/icon/android-icon-192x192.png">-->
+  <link href="assets/icon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <!--<link rel="icon" type="image/png" sizes="96x96" href="assets/icon/favicon-96x96.png">-->
+  <!--<link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">-->
+  <link href="assets/icon/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link crossorigin="use-credentials" href="assets/manifest.json" rel="manifest"/>
+  <link href="assets/opensearch.xml" rel="search" title="네이버지도" type="application/opensearchdescription+xml"/>
+  <meta content="#00bcd4" name="msapplication-TileColor"/>
+  <meta content="assets/icon/ms-icon-144x144.png" name="msapplication-TileImage"/>
+  <meta content="#00bcd4" name="theme-color"/>
+  <link href="styles.06cfad054b154336c2fb.css" rel="stylesheet"/>
+  <script charset="utf-8" src="19-es2015.0ea0e4eaad8157f127b9.js">
+  </script>
+  <script charset="utf-8" src="2-es2015.262bcd8ff639c7401562.js">
+  </script>
+  <script charset="utf-8" src="3-es2015.b3c02d6f93ffe1706936.js">
+  </script>
+  <script charset="utf-8" src="5-es2015.9a2481fe94ff07fd9282.js">
+  </script>
+  <script charset="utf-8" src="common-es2015.b6ce0f1c3fc84cb6acac.js">
+  </script>
+  <script charset="utf-8" src="29-es2015.cd52a19dba9172352e75.js">
+  </script>
+  <script charset="utf-8" src="1-es2015.8566f2524e0cb3d04331.js">
+  </script>
+  <script charset="utf-8" src="10-es2015.1f7af0cd881d28fa4f9f.js">
+  </script>
+  <script charset="utf-8" src="11-es2015.67c3e42b99946910cafc.js">
+  </script>
+  <script charset="utf-8" src="39-es2015.f6a6918fffe5b2bfb637.js">
+  </script>
+  <script charset="utf-8" src="8-es2015.43d4ea6d649dfe7cc9da.js">
+  </script>
+  <script charset="utf-8" src="23-es2015.cbdce0dc40c50262c4ca.js">
+  </script>
+  <style>
+   [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_in, [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_in:hover, [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_out, [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_out:hover{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/panorama.png);background-size:252px 227px}.retina   [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_in, .retina   [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_in:hover, .retina   [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_out, .retina   [_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_out:hover{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/panorama@2x.png)}[_nghost-bfe-c64]{position:absolute;left:0;right:0;top:0;bottom:0;height:100%;-ms-user-select:none;-moz-user-select:-moz-none;-webkit-user-select:none;user-select:none}[_nghost-bfe-c64]   #sPlugin_popup_base[_ngcontent-bfe-c64]{width:0;height:0}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]{display:flex;height:100%}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]{position:static}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   maps-layout[_ngcontent-bfe-c64]{z-index:1100}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   maps-layout[_ngcontent-bfe-c64]     .bus-station-popup{display:none}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   maps-layout[_ngcontent-bfe-c64]     map-container{position:absolute;top:0;right:0;bottom:0;left:0}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   maps-layout[_ngcontent-bfe-c64]     map-container .map-container{position:absolute!important;left:0;top:0;right:0;bottom:0;width:100%;height:100%}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .map_box[_ngcontent-bfe-c64]{position:static}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   panorama-layout[_ngcontent-bfe-c64]{display:flex;z-index:1000}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]   .popup_box[_ngcontent-bfe-c64]{display:none}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     .size_control{display:block}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder{bottom:8px;right:8px}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .list_control{width:29px}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .range_box{display:none}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_in{overflow:hidden;display:inline-block;width:27px;height:27px;font-size:0;color:transparent;vertical-align:top;background-position:-200px -146px}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_in:hover{overflow:hidden;display:inline-block;width:27px;height:27px;font-size:0;color:transparent;vertical-align:top;background-position:-200px -117px}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_out{overflow:hidden;display:inline-block;width:27px;height:26px;font-size:0;color:transparent;vertical-align:top;background-position:-126px -60px;border:none}[_nghost-bfe-c64]   .map_container.panorama[_ngcontent-bfe-c64]     control-bottom-widget-holder .btn_zoom_out:hover{overflow:hidden;display:inline-block;width:27px;height:26px;font-size:0;color:transparent;vertical-align:top;background-position:-130px -24px}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .sidebar[_ngcontent-bfe-c64]{position:relative;z-index:210;box-sizing:border-box}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .sidebar[_ngcontent-bfe-c64]:after{position:absolute;top:0;right:0;bottom:0;width:1px;background:#d9d9d9;content:""}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .sidebar.open_layer[_ngcontent-bfe-c64]{z-index:10}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]{position:relative;flex:1 0 auto}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   .hide[_ngcontent-bfe-c64]{display:none}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   maps-layout[_ngcontent-bfe-c64]{z-index:0}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .container[_ngcontent-bfe-c64]   maps-layout[_ngcontent-bfe-c64], [_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .map_box[_ngcontent-bfe-c64]{position:absolute;top:0;right:0;bottom:0;left:0}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   .bottom[_ngcontent-bfe-c64]{position:absolute;bottom:0;width:100%;pointer-events:none;z-index:100}[_nghost-bfe-c64]   .map_container[_ngcontent-bfe-c64]   panorama-layout[_ngcontent-bfe-c64]{z-index:0}[_nghost-bfe-c64]   .print[_ngcontent-bfe-c64]{display:none;height:0}[_nghost-bfe-c64]     message{position:absolute;left:50%;bottom:15px;transform:translate(-50%);z-index:2000}[_nghost-bfe-c64]   nm-spinner[_ngcontent-bfe-c64]{z-index:1100}[_nghost-bfe-c64]   .dimmed[_ngcontent-bfe-c64]{position:absolute;top:0;left:0;right:0;bottom:0;background-color:hsla(0,0%,100%,.35);z-index:1000}[_nghost-bfe-c64]   .u_skip[_ngcontent-bfe-c64]{position:relative}[_nghost-bfe-c64]   .u_skip[_ngcontent-bfe-c64]   a[_ngcontent-bfe-c64]{position:absolute;top:-30px;left:0;width:138px;border:1px solid #4ec53d;background:#333;text-align:center}[_nghost-bfe-c64]   .u_skip[_ngcontent-bfe-c64]   a[_ngcontent-bfe-c64]:active, [_nghost-bfe-c64]   .u_skip[_ngcontent-bfe-c64]   a[_ngcontent-bfe-c64]:focus{top:0;z-index:1000;text-decoration:none}[_nghost-bfe-c64]   .u_skip[_ngcontent-bfe-c64]   span[_ngcontent-bfe-c64]{display:inline-block;padding:2px 6px 0 0;color:#fff;letter-spacing:-1px;font-size:13px;line-height:26px}
+  </style>
+  <style>
+   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:hover:before, [_nghost-bfe-c35]   .logo_box[_ngcontent-bfe-c35]   .link_logo[_ngcontent-bfe-c35]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home.png);background-size:527px 476px}.retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train.active[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:before, .retina   [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:hover:before, .retina   [_nghost-bfe-c35]   .logo_box[_ngcontent-bfe-c35]   .link_logo[_ngcontent-bfe-c35]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home@2x.png)}[_nghost-bfe-c35]{display:flex;flex-direction:column;width:63px;height:100%;background-color:#fff}[_nghost-bfe-c35]   .logo_box[_ngcontent-bfe-c35]{display:flex;flex:0 0 auto;justify-content:center;align-items:center;height:76px;border-bottom:1px solid rgba(0,0,0,.15);box-sizing:border-box}[_nghost-bfe-c35]   .logo_box[_ngcontent-bfe-c35]   .link_logo[_ngcontent-bfe-c35]{display:inline-block;vertical-align:top;padding:10px;font-size:1px;line-height:1px}[_nghost-bfe-c35]   .logo_box[_ngcontent-bfe-c35]   .link_logo[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:21px;height:21px;font-size:0;color:transparent;vertical-align:top;background-position:-492px -340px;content:""}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]{width:63px}[_nghost-bfe-c35]   .list_navbar.-fold[_ngcontent-bfe-c35]   .link_navbar[_ngcontent-bfe-c35]{z-index:0}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar[_ngcontent-bfe-c35]{display:block;position:relative;z-index:10;padding:13px 1px 11px 0;color:#333;text-align:center}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar[_ngcontent-bfe-c35]:before{content:""}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar[_ngcontent-bfe-c35]:after{position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1;background:#0475f4}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar[_ngcontent-bfe-c35]:hover{color:#0475f4}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.active[_ngcontent-bfe-c35]{color:#fff}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.active[_ngcontent-bfe-c35]:after{content:""}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:before{background-position:-256px -371px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home[_ngcontent-bfe-c35]:hover:before{background-position:-192px -371px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home.active[_ngcontent-bfe-c35]:before{background-position:-128px -371px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.home.active[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:before{background-position:-256px -345px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top;background-position:-192px -345px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions.active[_ngcontent-bfe-c35]:before{background-position:-128px -345px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.directions.active[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:before{background-position:-64px -345px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:hover:before{background-position:0 -345px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.bus.active[_ngcontent-bfe-c35]:before{background-position:-84px -56px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:before{background-position:-256px -397px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway[_ngcontent-bfe-c35]:hover:before{background-position:-192px -397px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway.active[_ngcontent-bfe-c35]:before{background-position:-128px -397px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.subway.active[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:before{background-position:-64px -371px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top;background-position:0 -371px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite.active[_ngcontent-bfe-c35]:before{background-position:-320px -345px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.favorite.active[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:before{background-position:-64px -397px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top;background-position:0 -397px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.settings.active[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:62px;height:24px;font-size:0;color:transparent;vertical-align:top;background-position:-320px -371px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:before{background-position:-48px -423px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:before, [_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:hover:before{overflow:hidden;display:inline-block;width:46px;height:24px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train[_ngcontent-bfe-c35]:hover:before{background-position:0 -423px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .link_navbar.train.active[_ngcontent-bfe-c35]:before{overflow:hidden;display:inline-block;width:46px;height:24px;font-size:0;color:transparent;vertical-align:top;background-position:-152px -96px}[_nghost-bfe-c35]   .list_navbar[_ngcontent-bfe-c35]   .navbar_text[_ngcontent-bfe-c35]{display:block;min-height:13px;margin-top:3px;font-size:12px;line-height:15px;letter-spacing:-.44px}[_nghost-bfe-c35]   .scroll_area[_ngcontent-bfe-c35]{margin-bottom:auto}[_nghost-bfe-c35]   gnb-widget[_ngcontent-bfe-c35]{flex:0 0 103px}
+  </style>
+  <style>
+   [_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]   .btn_update[_ngcontent-bfe-c36]:after{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/popup.png);background-size:201px 160px}.retina   [_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]   .btn_update[_ngcontent-bfe-c36]:after{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/popup@2x.png)}[_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]{position:relative;padding:7px 12px;border-radius:4px;background-color:rgba(29,146,255,.9);box-sizing:border-box;font-size:0}[_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]   .message[_ngcontent-bfe-c36]{display:inline-block;font-size:13px;font-weight:400;line-height:18px;text-align:center;color:#fff;vertical-align:top}[_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]   .message[_ngcontent-bfe-c36]     b{font-weight:500;color:#4a90e2}[_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]   .btn_update[_ngcontent-bfe-c36]{padding:2px 0;letter-spacing:-.5px}[_nghost-bfe-c36]   .message_area[_ngcontent-bfe-c36]   .btn_update[_ngcontent-bfe-c36]:after{overflow:hidden;display:inline-block;width:7px;height:11px;font-size:0;color:transparent;vertical-align:top;background-position:-160px -141px;margin:3px 0 0 5px;content:""}
+  </style>
+  <style>
+   perfect-scrollbar{display:block;height:100%;max-height:100%;max-width:100%;overflow:hidden;position:relative;width:100%}perfect-scrollbar[hidden]{display:none}perfect-scrollbar[fxflex]{display:flex;flex-direction:column;height:auto;min-height:0;min-width:0}perfect-scrollbar[fxflex]>.ps{-webkit-box-flex:1;flex:1 1 auto;height:auto;min-height:0;min-width:0;width:auto}perfect-scrollbar[fxlayout]>.ps,perfect-scrollbar[fxlayout]>.ps>.ps-content{-webkit-box-align:inherit;-webkit-box-flex:1;-webkit-box-pack:inherit;align-content:inherit;align-items:inherit;display:flex;flex:1 1 auto;flex-direction:inherit;height:100%;justify-content:inherit;width:100%},perfect-scrollbar[fxlayout=row]>.ps,perfect-scrollbar[fxlayout=row]>.ps>.ps-content{flex-direction:row!important}perfect-scrollbar[fxlayout=column]>.ps,perfect-scrollbar[fxlayout=column]>.ps>.ps-content{flex-direction:column!important}perfect-scrollbar>.ps{display:block;height:100%;max-height:100%;max-width:100%;position:static;width:100%}perfect-scrollbar>.ps textarea{-ms-overflow-style:scrollbar}perfect-scrollbar>.ps>.ps-overlay{bottom:0;display:block;left:0;overflow:hidden;pointer-events:none;position:absolute;right:0;top:0}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-bottom,perfect-scrollbar>.ps>.ps-overlay .ps-indicator-left,perfect-scrollbar>.ps>.ps-overlay .ps-indicator-right,perfect-scrollbar>.ps>.ps-overlay .ps-indicator-top{opacity:0;position:absolute;transition:opacity .3s ease-in-out}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-bottom,perfect-scrollbar>.ps>.ps-overlay .ps-indicator-top{left:0;min-height:24px;min-width:100%}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-left,perfect-scrollbar>.ps>.ps-overlay .ps-indicator-right{min-height:100%;min-width:24px;top:0}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-top{top:0}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-left{left:0}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-right{right:0}perfect-scrollbar>.ps>.ps-overlay .ps-indicator-bottom{bottom:0}perfect-scrollbar>.ps.ps--active-y>.ps__rail-y{cursor:default;left:auto!important;right:0!important;top:0!important;transition:width .2s linear,opacity .2s linear,background-color .2s linear;width:10px}perfect-scrollbar>.ps.ps--active-y>.ps__rail-y.ps--clicking,perfect-scrollbar>.ps.ps--active-y>.ps__rail-y:hover{width:15px}perfect-scrollbar>.ps.ps--active-x>.ps__rail-x{bottom:0!important;cursor:default;height:10px;left:0!important;top:auto!important;transition:height .2s linear,opacity .2s linear,background-color .2s linear}perfect-scrollbar>.ps.ps--active-x>.ps__rail-x.ps--clicking,perfect-scrollbar>.ps.ps--active-x>.ps__rail-x:hover{height:15px}perfect-scrollbar>.ps.ps--active-x.ps--active-y>.ps__rail-y{margin:0 0 10px}perfect-scrollbar>.ps.ps--active-x.ps--active-y>.ps__rail-x{margin:0 10px 0 0}perfect-scrollbar>.ps.ps--scrolling-x>.ps__rail-x,perfect-scrollbar>.ps.ps--scrolling-y>.ps__rail-y{background-color:#eee;opacity:.9}perfect-scrollbar.ps-show-always>.ps.ps--active-x>.ps__rail-x,perfect-scrollbar.ps-show-always>.ps.ps--active-y>.ps__rail-y{opacity:.6}perfect-scrollbar.ps-show-active>.ps.ps--active-y>.ps-overlay:not(.ps-at-top) .ps-indicator-top{background:linear-gradient(180deg,hsla(0,0%,100%,.5) 0,hsla(0,0%,100%,0));opacity:1}perfect-scrollbar.ps-show-active>.ps.ps--active-y>.ps-overlay:not(.ps-at-bottom) .ps-indicator-bottom{background:linear-gradient(0deg,hsla(0,0%,100%,.5) 0,hsla(0,0%,100%,0));opacity:1}perfect-scrollbar.ps-show-active>.ps.ps--active-x>.ps-overlay:not(.ps-at-left) .ps-indicator-left{background:linear-gradient(90deg,hsla(0,0%,100%,.5) 0,hsla(0,0%,100%,0));opacity:1}perfect-scrollbar.ps-show-active>.ps.ps--active-x>.ps-overlay:not(.ps-at-right) .ps-indicator-right{background:linear-gradient(270deg,hsla(0,0%,100%,.5) 0,hsla(0,0%,100%,0));opacity:1}perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-y>.ps-overlay.ps-at-top .ps-indicator-top{background:linear-gradient(180deg,hsla(0,0%,66.7%,.5) 0,hsla(0,0%,66.7%,0))}perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-y>.ps-overlay.ps-at-bottom .ps-indicator-bottom{background:linear-gradient(0deg,hsla(0,0%,66.7%,.5) 0,hsla(0,0%,66.7%,0))}perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-x>.ps-overlay.ps-at-left .ps-indicator-left{background:linear-gradient(90deg,hsla(0,0%,66.7%,.5) 0,hsla(0,0%,66.7%,0))}perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-x>.ps-overlay.ps-at-right .ps-indicator-right{background:linear-gradient(270deg,hsla(0,0%,66.7%,.5) 0,hsla(0,0%,66.7%,0))}perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-x>.ps-overlay.ps-at-left .ps-indicator-left.ps-indicator-show,perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-x>.ps-overlay.ps-at-right .ps-indicator-right.ps-indicator-show,perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-y>.ps-overlay.ps-at-bottom .ps-indicator-bottom.ps-indicator-show,perfect-scrollbar.ps-show-active.ps-show-limits>.ps.ps--active-y>.ps-overlay.ps-at-top .ps-indicator-top.ps-indicator-show{opacity:1}
+  </style>
+  <style>
+   .ps{-ms-overflow-style:none;-ms-touch-action:auto;overflow:hidden!important;overflow-anchor:none;touch-action:auto}.ps__rail-x{bottom:0;height:15px}.ps__rail-x,.ps__rail-y{-webkit-transition:background-color .2s linear,opacity .2s linear;display:none;opacity:0;position:absolute;transition:background-color .2s linear,opacity .2s linear}.ps__rail-y{right:0;width:15px}.ps--active-x>.ps__rail-x,.ps--active-y>.ps__rail-y{background-color:transparent;display:block}.ps--focus>.ps__rail-x,.ps--focus>.ps__rail-y,.ps--scrolling-x>.ps__rail-x,.ps--scrolling-y>.ps__rail-y,.ps:hover>.ps__rail-x,.ps:hover>.ps__rail-y{opacity:.6}.ps .ps__rail-x.ps--clicking,.ps .ps__rail-x:focus,.ps .ps__rail-x:hover,.ps .ps__rail-y.ps--clicking,.ps .ps__rail-y:focus,.ps .ps__rail-y:hover{background-color:#eee;opacity:.9}.ps__thumb-x{-webkit-transition:background-color .2s linear,height .2s ease-in-out;bottom:2px;height:6px;transition:background-color .2s linear,height .2s ease-in-out}.ps__thumb-x,.ps__thumb-y{background-color:#aaa;border-radius:6px;position:absolute}.ps__thumb-y{-webkit-transition:background-color .2s linear,width .2s ease-in-out;right:2px;transition:background-color .2s linear,width .2s ease-in-out;width:6px}.ps__rail-x.ps--clicking .ps__thumb-x,.ps__rail-x:focus>.ps__thumb-x,.ps__rail-x:hover>.ps__thumb-x{background-color:#999;height:11px}.ps__rail-y.ps--clicking .ps__thumb-y,.ps__rail-y:focus>.ps__thumb-y,.ps__rail-y:hover>.ps__thumb-y{background-color:#999;width:11px}@supports (-ms-overflow-style:none){.ps{overflow:auto!important}}@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active){.ps{overflow:auto!important}}
+  </style>
+  <style>
+   [_nghost-bfe-c32]   .badge_dot[_ngcontent-bfe-c32]{position:absolute;width:4px;height:4px;background:#f61024;border-radius:50%}
+  </style>
+  <style>
+   [_nghost-bfe-c34]     #gnb_login_layer .gnb_btn_login, [_nghost-bfe-c34]     #gnb_service_layer .gnb_service .gnb_icon{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home.png);background-size:527px 476px}.retina   [_nghost-bfe-c34]     #gnb_login_layer .gnb_btn_login, .retina   [_nghost-bfe-c34]     #gnb_service_layer .gnb_service .gnb_icon{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home@2x.png)}[_nghost-bfe-c34]{border-top:1px solid rgba(0,0,0,.15)}[_nghost-bfe-c34]     #gnb input{-webkit-appearance:textfield}[_nghost-bfe-c34]     #gnb input[type=checkbox]{-webkit-appearance:checkbox}[_nghost-bfe-c34]     #gnb_notice_layer{display:none!important}[_nghost-bfe-c34]     #gnb_my_layer{position:relative;width:100%;height:22px;text-align:center;margin:20px 0 0}[_nghost-bfe-c34]     #gnb_my_layer   #gnb_my_namebox{position:absolute;top:0;left:0;right:0;bottom:0;width:22px;height:22px;margin:auto;padding:0}[_nghost-bfe-c34]     #gnb_my_layer   #gnb_my_namebox img{width:100%;height:100%}[_nghost-bfe-c34]     #gnb_my_layer   #gnb_my_namebox .ico_arrow{left:100%;top:8px;margin-left:22px;transform:rotate(-90deg)}[_nghost-bfe-c34]     #gnb_my_layer   #gnb_profile_filter_mask{display:none!important}[_nghost-bfe-c34]     #gnb_my_layer #gnb_my_lyr{position:absolute;left:100%;bottom:-48px;right:auto;top:auto;margin-left:8px;text-align:left}[_nghost-bfe-c34]     #gnb_my_layer #gnb_my_lyr_iframe{display:none!important}[_nghost-bfe-c34]     #gnb_my_layer .gnb_my{position:relative}[_nghost-bfe-c34]     #gnb_my_layer .gnb_my:after{position:absolute;top:0;left:0;right:0;bottom:0;border:1px solid #e8e8e8;border-radius:50%;content:""}[_nghost-bfe-c34]     #gnb_login_layer{position:relative;float:none!important;width:100%;padding:0;margin:23px auto 0!important;height:22px;text-align:center}[_nghost-bfe-c34]     #gnb_login_layer .gnb_btn_login{overflow:hidden;display:inline-block;width:22px;height:22px;font-size:0;color:transparent;vertical-align:top;background-position:-492px -299px}[_nghost-bfe-c34]     #gnb_login_layer .gnb_bdr, [_nghost-bfe-c34]     #gnb_login_layer .gnb_bg{display:none!important}[_nghost-bfe-c34]     #gnb_service_layer{float:none!important;width:100%;height:16px;margin:14px auto 0!important}[_nghost-bfe-c34]     #gnb_service_layer .gnb_service{width:auto;height:auto;padding:0;text-align:center}[_nghost-bfe-c34]     #gnb_service_layer .gnb_service .gnb_icon{overflow:hidden;display:inline-block;width:16px;height:16px;font-size:0;color:transparent;vertical-align:top;background-position:-384px -371px}[_nghost-bfe-c34]     #gnb_service_layer .gnb_service .ico_arrow{position:absolute;left:100%;top:auto;bottom:7px;margin-left:7px;transform:rotate(-90deg)}[_nghost-bfe-c34]     #gnb_service_lyr_iframe, [_nghost-bfe-c34]     #gnb_svc_more_iframe{display:none!important}[_nghost-bfe-c34]     #gnb_service_lyr{position:absolute;left:calc(100% + 12px);bottom:0;top:auto;margin:0 0 -12px;right:auto}[_nghost-bfe-c34]     #gnb_svc_more{position:absolute;left:100%;bottom:0;top:auto;right:auto;margin-bottom:-2px}[_nghost-bfe-c34]     #gnb_mail_layer{display:none!important}
+  </style>
+  <style>
+   [_nghost-bfe-c67]{position:absolute;top:0;left:0;bottom:0;z-index:200}[_nghost-bfe-c67]   .panel_wrap[_ngcontent-bfe-c67]{position:relative;height:100%;background:#fff;min-width:390px;box-shadow:0 0 5px 0 rgba(0,0,0,.2),5px 0 15px 0 rgba(0,0,0,.1)}[_nghost-bfe-c67]   .panel_wrap.-fold[_ngcontent-bfe-c67]{box-shadow:none}
+  </style>
+  <style>
+   [_nghost-bfe-c80]{display:flex;flex-direction:column;height:100%}
+  </style>
+  <style>
+   [_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:after, [_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:hover:after, [_nghost-bfe-c77]   .button_search[_ngcontent-bfe-c77]{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/search.png);background-size:194px 190px}.retina   [_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:after, .retina   [_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:hover:after, .retina   [_nghost-bfe-c77]   .button_search[_ngcontent-bfe-c77]{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/search@2x.png)}[_nghost-bfe-c77]{display:block;position:absolute;top:0;left:0;z-index:100;width:340px;margin:auto;padding:15px 25px}[_nghost-bfe-c77]   .search_wrap[_ngcontent-bfe-c77], .static[_nghost-bfe-c77]{position:relative}[_nghost-bfe-c77]   .search_wrap.-active[_ngcontent-bfe-c77]   .search_box[_ngcontent-bfe-c77]{box-shadow:0 4px 5px 0 hsla(0,0%,52.5%,.1)}[_nghost-bfe-c77]   .search_wrap.-active[_ngcontent-bfe-c77]   .label_search[_ngcontent-bfe-c77]{color:#d8d8d8}[_nghost-bfe-c77]   .search_wrap.-active[_ngcontent-bfe-c77]   .input_search[_ngcontent-bfe-c77]{outline:none}[_nghost-bfe-c77]   .search_wrap.-has_layer[_ngcontent-bfe-c77]   .search_box[_ngcontent-bfe-c77]{border-radius:5px 5px 0 0}[_nghost-bfe-c77]   .search_box[_ngcontent-bfe-c77]{position:relative;z-index:110;height:42px;padding-left:45px;border:2px solid #19ce60;border-radius:5px}[_nghost-bfe-c77]   .button_search[_ngcontent-bfe-c77]{overflow:hidden;display:inline-block;width:25px;height:24px;font-size:0;color:transparent;vertical-align:top;background-position:0 -112px;position:absolute;top:9px;left:15px}[_nghost-bfe-c77]   .input_box[_ngcontent-bfe-c77]{position:relative;z-index:0;padding-right:43px}[_nghost-bfe-c77]   .input_search[_ngcontent-bfe-c77], [_nghost-bfe-c77]   .label_search[_ngcontent-bfe-c77]{display:block;width:100%;font-size:16px;height:42px;letter-spacing:-.2px}[_nghost-bfe-c77]   .label_search[_ngcontent-bfe-c77]{position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;color:#9c9c9c;line-height:44px;font-weight:400}[_nghost-bfe-c77]   .input_search[_ngcontent-bfe-c77]{position:relative;color:#000;font-weight:700}[_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]{position:absolute;top:0;right:0;bottom:0;z-index:10;width:43px;font-size:1px;line-height:1px;background:#fff;border-radius:0 5px 5px 0}[_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:before{position:absolute;top:0;bottom:0;left:0;width:1px;height:20px;margin:auto;background:#ecf0f2;content:""}[_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:after{background-position:-72px -158px;content:""}[_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:after, [_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:hover:after{overflow:hidden;display:inline-block;width:14px;height:14px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c77]   .button_clear[_ngcontent-bfe-c77]:hover:after{background-position:-56px -158px}[_nghost-bfe-c77]   .result_box[_ngcontent-bfe-c77]{position:absolute;top:0;left:0;right:0;padding-top:44px}[_nghost-bfe-c77]   .result_content[_ngcontent-bfe-c77]{position:relative;z-index:210;background:#fff;border-radius:0 0 5px 5px;box-shadow:0 1px 3px 0 rgba(0,0,0,.1)}[_nghost-bfe-c77]   .result_content[_ngcontent-bfe-c77]     instant-search-list .scroll_area{padding-top:0}[_nghost-bfe-c77]   .result_content[_ngcontent-bfe-c77]:emtpy{display:none}[_nghost-bfe-c77]   .result_content[_ngcontent-bfe-c77]   .history_area[_ngcontent-bfe-c77], [_nghost-bfe-c77]   .result_content[_ngcontent-bfe-c77]   .instant_search_area[_ngcontent-bfe-c77]{padding-top:14px;border:1px solid #e0e0e0;border-radius:0 0 5px 5px;background:#fff}
+  </style>
+  <style>
+   [_nghost-bfe-c139]{flex:1 1 auto;height:100%}[_nghost-bfe-c139], [_nghost-bfe-c139]   .main[_ngcontent-bfe-c139], [_nghost-bfe-c139]   .sub[_ngcontent-bfe-c139]{position:relative;display:flex}[_nghost-bfe-c139]   .main[_ngcontent-bfe-c139], [_nghost-bfe-c139]   .sub[_ngcontent-bfe-c139]{width:390px;flex:none;flex-direction:column;background:#fff}[_nghost-bfe-c139]   .main.-top_space[_ngcontent-bfe-c139]{padding-top:76px}[_nghost-bfe-c139]   .sub[_ngcontent-bfe-c139]{border-left:1px solid #ddd}[_nghost-bfe-c139]   .sub.hidden[_ngcontent-bfe-c139]{display:none}[_nghost-bfe-c139]   .sub.-covered[_ngcontent-bfe-c139]{top:76px}[_nghost-bfe-c139]   .sub.-covered[_ngcontent-bfe-c139], [_nghost-bfe-c139]   .sub.-covered-top0[_ngcontent-bfe-c139]{position:absolute;left:-1px;right:1px;bottom:0;z-index:30}[_nghost-bfe-c139]   .sub.-covered-top0[_ngcontent-bfe-c139]{top:0}
+  </style>
+  <style>
+   .hide[_nghost-bfe-c46]     .center_bottom, .hide[_nghost-bfe-c46]     .control_widget control-bottom-widget-holder control-location, .hide[_nghost-bfe-c46]     .control_widget control-debug, .hide[_nghost-bfe-c46]     .control_widget control-scale, .hide[_nghost-bfe-c46]     .control_widget control-top-widget-holder, .hide[_nghost-bfe-c46]     accident-popup, .hide[_nghost-bfe-c46]     around-here-current-widget, .hide[_nghost-bfe-c46]     cctv-popup, .hide[_nghost-bfe-c46]     context-menu, .hide[_nghost-bfe-c46]     legend-popup, .hide[_nghost-bfe-c46]     traffic-popup{display:none}
+  </style>
+  <style>
+   [_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66], [_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66], [_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66]:hover, [_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66]:hover{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home.png);background-size:527px 476px}.retina   [_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66], .retina   [_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66], .retina   [_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66]:hover, .retina   [_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66]:hover{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home@2x.png)}[_nghost-bfe-c66]{position:absolute;top:50%;left:100%;transform:translateY(-50%);z-index:10}.hide[_nghost-bfe-c66]{display:none}[_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66]{background-position:-468px 0}[_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66], [_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66]:hover{overflow:hidden;display:inline-block;width:22px;height:49px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c66]   .btn_fold[_ngcontent-bfe-c66]:hover{background-position:-428px -336px}[_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66]{background-position:-428px -285px}[_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66], [_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66]:hover{overflow:hidden;display:inline-block;width:22px;height:49px;font-size:0;color:transparent;vertical-align:top}[_nghost-bfe-c66]   .btn_fold.expand[_ngcontent-bfe-c66]:hover{background-position:-428px -234px}
+  </style>
+  <style>
+   [_nghost-bfe-c137]{position:relative;display:block;flex:1 1 auto;overflow:hidden;height:100%}
+  </style>
+  <style>
+   [_nghost-bfe-c143]   .error_area[_ngcontent-bfe-c143]   .error_message[_ngcontent-bfe-c143]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/common.png);background-size:238px 237px}.retina   [_nghost-bfe-c143]   .error_area[_ngcontent-bfe-c143]   .error_message[_ngcontent-bfe-c143]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/common@2x.png)}[_nghost-bfe-c143]{display:flex;flex-direction:column;width:390px;height:100%;background-color:#fff;box-sizing:border-box}.-covered[_nghost-bfe-c143]{display:block;position:absolute;top:0;left:0;z-index:30}[_nghost-bfe-c143]   .error_area[_ngcontent-bfe-c143]{top:0;left:0;right:0;bottom:0;text-align:center}[_nghost-bfe-c143]   .error_area[_ngcontent-bfe-c143]   .error_message[_ngcontent-bfe-c143]{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);padding:0 20px;font-size:14px;line-height:23px;color:#333}[_nghost-bfe-c143]   .error_area[_ngcontent-bfe-c143]   .error_message[_ngcontent-bfe-c143]:before{overflow:hidden;display:inline-block;width:42px;height:42px;font-size:0;color:transparent;vertical-align:top;background-position:0 0;content:"";display:block;margin:0 auto 12px}
+  </style>
+  <style>
+   [_nghost-bfe-c140]{display:flex}[_nghost-bfe-c140]   .wrapper[_ngcontent-bfe-c140]{pointer-events:auto}
+  </style>
+  <style>
+   [_nghost-bfe-c141]   .btn_research[_ngcontent-bfe-c141]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home.png);background-size:527px 476px}.retina   [_nghost-bfe-c141]   .btn_research[_ngcontent-bfe-c141]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home@2x.png)}[_nghost-bfe-c141]   .btn_research[_ngcontent-bfe-c141]{height:42px;padding:0 19px 0 15px;border-radius:31px;background:#3575ec;box-shadow:0 2px 4px 0 rgba(0,0,0,.2);white-space:nowrap}[_nghost-bfe-c141]   .btn_research[_ngcontent-bfe-c141]   .btn_text[_ngcontent-bfe-c141]{display:inline-block;font-size:16px;font-weight:700;letter-spacing:-.1px;line-height:26px;color:#fff;vertical-align:top}[_nghost-bfe-c141]   .btn_research[_ngcontent-bfe-c141]:before{overflow:hidden;display:inline-block;width:24px;height:24px;font-size:0;color:transparent;background-position:-492px -145px;margin:0 3px 0 0;vertical-align:top;content:""}
+  </style>
+  <style>
+   [_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/common.png);background-size:238px 237px}.retina   [_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/common@2x.png)}[_nghost-bfe-c51]{position:absolute;top:0;right:0;left:0;bottom:0;z-index:10;white-space:nowrap;text-align:center;font-size:0;background:hsla(0,0%,100%,.8)}.subway_overlay[_nghost-bfe-c51]{padding-left:390px}.no_bg[_nghost-bfe-c51]{background:transparent}[_nghost-bfe-c51]:before{height:100%;content:""}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51], [_nghost-bfe-c51]:before{display:inline-block;vertical-align:middle}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]{font-size:1px;white-space:nowrap}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]{display:inline-block;vertical-align:top;position:relative;margin-right:17px}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:last-child{margin-right:0}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:before{overflow:hidden;display:inline-block;width:16px;height:22px;font-size:0;color:transparent;vertical-align:top;background-position:-222px 0;content:""}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:after{position:absolute;top:1px;left:0;right:0;width:14px;height:14px;margin:auto;background:#e0e0e0;border-radius:8px;-webkit-animation:load8 .4s ease-in-out infinite;animation:load8 .4s ease-in-out infinite;transform-origin:bottom;content:""}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:first-child:after{-webkit-animation-delay:-.14s;animation-delay:-.14s}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:nth-child(2):after{-webkit-animation-delay:-.07s;animation-delay:-.07s}[_nghost-bfe-c51]   .loader[_ngcontent-bfe-c51]   .icon[_ngcontent-bfe-c51]:nth-child(3):after{-webkit-animation-delay:0s;animation-delay:0s}@-webkit-keyframes load8{0%{transform:scale(1)}50%{transform:scale(1.2)}to{transform:scale(1)}}@keyframes load8{0%{transform:scale(1)}50%{transform:scale(1.2)}to{transform:scale(1)}}
+  </style>
+  <style>
+   [_nghost-bfe-c121]{display:flex;flex-direction:column;position:absolute;width:100%;height:100%}
+  </style>
+  <style>
+   [_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .btn_correction[_ngcontent-bfe-c111]:after, [_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .correction_text[_ngcontent-bfe-c111]:before, [_nghost-bfe-c111]   .extended_search_text[_ngcontent-bfe-c111]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/search.png);background-size:194px 190px}.retina   [_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .btn_correction[_ngcontent-bfe-c111]:after, .retina   [_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .correction_text[_ngcontent-bfe-c111]:before, .retina   [_nghost-bfe-c111]   .extended_search_text[_ngcontent-bfe-c111]:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/search@2x.png)}[_nghost-bfe-c111]   .correction_info_text[_ngcontent-bfe-c111]{padding:0 25px 15px;font-size:14px;color:#424242;line-height:18px}[_nghost-bfe-c111]   .correction_info_text[_ngcontent-bfe-c111]     strong{color:#0068c3;font-weight:400}[_nghost-bfe-c111]   .extended_search_text[_ngcontent-bfe-c111]{margin:0 25px;padding:1px 0 14px;font-size:13px;line-height:18px;letter-spacing:-.2px;color:#424242}[_nghost-bfe-c111]   .extended_search_text[_ngcontent-bfe-c111]:before{overflow:hidden;display:inline-block;width:14px;height:14px;font-size:0;color:transparent;vertical-align:top;background-position:-88px -158px;margin:1px 4px 0 0;content:""}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]{display:flex;flex-wrap:wrap;justify-content:space-between;margin-top:-1px;padding:0 25px 13px}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .correction_text[_ngcontent-bfe-c111]{display:inline-block;margin:1px 6px 0 0;font-size:13px;line-height:20px;letter-spacing:-.2px;color:#424242;vertical-align:top}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .correction_text[_ngcontent-bfe-c111]:before{overflow:hidden;display:inline-block;width:14px;height:14px;font-size:0;color:transparent;vertical-align:top;background-position:-88px -158px;margin:2px 4px 0 0;content:""}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .correction_text[_ngcontent-bfe-c111]     strong{font-weight:700;color:#242424}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .btn_correction[_ngcontent-bfe-c111]{margin-top:1px;font-size:13px;line-height:20px;letter-spacing:-.2px;color:#0068c3;vertical-align:top}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .btn_correction[_ngcontent-bfe-c111]:after{overflow:hidden;display:inline-block;width:10px;height:10px;font-size:0;color:transparent;vertical-align:top;background-position:-154px -126px;margin-top:4px;content:""}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .btn_correction[_ngcontent-bfe-c111]:hover{text-decoration:underline}[_nghost-bfe-c111]   .correction_text_wrap[_ngcontent-bfe-c111]   .btn_correction[_ngcontent-bfe-c111]     strong{font-weight:700}
+  </style>
+  <style>
+   [_nghost-bfe-c112]   iframe[_ngcontent-bfe-c112]{width:100%;height:100%;border:none;overflow:auto}
+  </style>
+  <style>
+   [_nghost-bfe-c78]   .btn_more_filter.hover[_ngcontent-bfe-c78]:before, [_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:before, [_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:hover:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home.png);background-size:527px 476px}.retina   [_nghost-bfe-c78]   .btn_more_filter.hover[_ngcontent-bfe-c78]:before, .retina   [_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:before, .retina   [_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:hover:before{background-image:url(https://ssl.pstatic.net/static/maps/v5/pc/20230216150825/home@2x.png)}[_nghost-bfe-c78]{position:absolute;left:405px;top:15px;border:1px solid rgba(0,0,0,.05);border-radius:4px}[_nghost-bfe-c78]   .bubble_filter_area[_ngcontent-bfe-c78]{background:#fff;box-shadow:0 2px 4px 0 rgba(0,0,0,.12);border-radius:4px;font-size:0;white-space:nowrap}[_nghost-bfe-c78]   .bubble_filter_area[_ngcontent-bfe-c78]:after{display:block;clear:both;content:""}[_nghost-bfe-c78]   .bubble_filter_list[_ngcontent-bfe-c78]{display:inline-block;padding:0 11px}[_nghost-bfe-c78]   .bubble_filter_item[_ngcontent-bfe-c78]{display:inline-block;vertical-align:top}[_nghost-bfe-c78]   .bubble_filter[_ngcontent-bfe-c78]{position:relative;padding:19px 11px 17px;line-height:19px;font-size:15px;font-weight:600;color:#242424}[_nghost-bfe-c78]   .bubble_filter.-on[_ngcontent-bfe-c78], [_nghost-bfe-c78]   .bubble_filter[_ngcontent-bfe-c78]:hover{color:#0475f4}[_nghost-bfe-c78]   .bubble_filter[_ngcontent-bfe-c78]   img[_ngcontent-bfe-c78]{margin:-1px 5px 0 0}[_nghost-bfe-c78]   .more_group[_ngcontent-bfe-c78]{display:inline-block;vertical-align:top}[_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]{height:55px;width:55px;border-left:1px solid #ededed;font-size:1px;line-height:3px;vertical-align:top;border-radius:0 4px 4px 0}[_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:before{overflow:hidden;display:inline-block;width:15px;height:3px;font-size:0;color:transparent;vertical-align:top;background-position:-509px -473px;content:""}[_nghost-bfe-c78]   .btn_more_filter.hover[_ngcontent-bfe-c78], [_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:hover{background:#f7f9fa}[_nghost-bfe-c78]   .btn_more_filter.hover[_ngcontent-bfe-c78]:before, [_nghost-bfe-c78]   .btn_more_filter[_ngcontent-bfe-c78]:hover:before{overflow:hidden;display:inline-block;width:15px;height:3px;font-size:0;color:transparent;vertical-align:top;background-position:-492px -473px}[_nghost-bfe-c78]   .appendix_filter_area[_ngcontent-bfe-c78]{position:absolute;right:-1px;top:100%}[_nghost-bfe-c78]   .appendix_filter_wrap[_ngcontent-bfe-c78]{margin-top:8px;border:1px solid rgba(0,0,0,.05);border-radius:4px}[_nghost-bfe-c78]   .appendix_filter_inner[_ngcontent-bfe-c78]{padding:0 10px;background:#fff;border-radius:4px;font-size:0;white-space:nowrap;box-shadow:0 2px 4px 0 rgba(0,0,0,.12)}[_nghost-bfe-c78]   .appendix_filter_list[_ngcontent-bfe-c78]{display:inline-block;vertical-align:top;padding:17px 0 16px}[_nghost-bfe-c78]   .appendix_filter_item[_ngcontent-bfe-c78]   .bubble_filter[_ngcontent-bfe-c78]{width:100%;padding:13px 15px 14px;text-align:left}
+  </style>
+ </head>
+ <body class="chrome chrome_111_0_0_0 pc webkit webkit_537_36 windows windows_10 retina" style="">
+  <app ng-version="11.2.14">
+   <router-outlet>
+   </router-outlet>
+   <layout _nghost-bfe-c64="" class="ng-star-inserted">
+    <div _ngcontent-bfe-c64="" id="sPlugin_popup_base">
+    </div>
+    <div _ngcontent-bfe-c64="" class="u_skip">
+     <a _ngcontent-bfe-c64="" href="#container" onclick="document.getElementById('container').tabIndex = -1;document.getElementById('container').focus();return false;">
+      <span _ngcontent-bfe-c64="">
+       본문 바로가기
+      </span>
+     </a>
+     <a _ngcontent-bfe-c64="" href="#sidebar" onclick="document.getElementById('sidebar').tabIndex = -1;document.getElementById('sidebar').focus();return false;">
+      <span _ngcontent-bfe-c64="">
+       주 메뉴 바로가기
+      </span>
+     </a>
+    </div>
+    <div _ngcontent-bfe-c64="" class="map_container fold">
+     <div _ngcontent-bfe-c64="" class="sidebar" id="sidebar">
+      <navbar _ngcontent-bfe-c64="" _nghost-bfe-c35="">
+       <h1 _ngcontent-bfe-c35="" class="logo_box">
+        <a _ngcontent-bfe-c35="" class="link_logo" href="https://www.naver.com">
+         <span _ngcontent-bfe-c35="" class="blind">
+          네이버 지도
+         </span>
+        </a>
+       </h1>
+       <perfect-scrollbar _ngcontent-bfe-c35="" class="scroll_area">
+        <div class="ps" style="position: static;">
+         <div class="ps-content">
+          <div _ngcontent-bfe-c35="" class="scroll_box">
+           <ul _ngcontent-bfe-c35="" class="list_navbar">
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar home active" href="">
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               지도 홈
+              </span>
+              <span _ngcontent-bfe-c35="" class="blind ng-star-inserted">
+               선택됨
+              </span>
+              <!-- -->
+             </a>
+            </li>
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar directions" href="">
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               길찾기
+              </span>
+              <!-- -->
+             </a>
+            </li>
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar bus" href="">
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               버스
+              </span>
+              <!-- -->
+             </a>
+            </li>
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar subway" href="">
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               지하철
+              </span>
+              <!-- -->
+             </a>
+            </li>
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar train" href="">
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               기차
+              </span>
+              <!-- -->
+             </a>
+            </li>
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar favorite" href="">
+              <nudge-dot _ngcontent-bfe-c35="" _nghost-bfe-c32="" key="favorite_navbar" right="21" top="14">
+               <span _ngcontent-bfe-c32="" class="badge_dot ng-star-inserted" style="top: 14px; right: 21px;">
+                <span _ngcontent-bfe-c32="" class="blind">
+                 new
+                </span>
+               </span>
+               <!-- -->
+              </nudge-dot>
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               저장
+              </span>
+              <!-- -->
+             </a>
+            </li>
+            <li _ngcontent-bfe-c35="" class="item_navbar">
+             <a _ngcontent-bfe-c35="" class="link_navbar settings" href="">
+              <span _ngcontent-bfe-c35="" class="navbar_text">
+               더보기
+              </span>
+              <!-- -->
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <!-- -->
+         <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" style="left: 0px; width: 0px;" tabindex="0">
+          </div>
+         </div>
+         <div class="ps__rail-y" style="top: 0px; right: 0px;">
+          <div class="ps__thumb-y" style="top: 0px; height: 0px;" tabindex="0">
+          </div>
+         </div>
+        </div>
+       </perfect-scrollbar>
+       <gnb-widget _ngcontent-bfe-c35="" _nghost-bfe-c34="">
+        <div _ngcontent-bfe-c34="" id="gnb" stoppropagation="">
+        </div>
+       </gnb-widget>
+      </navbar>
+     </div>
+     <div _ngcontent-bfe-c64="" class="container" id="container">
+      <router-outlet _ngcontent-bfe-c64="">
+      </router-outlet>
+      <shrinkable-layout _nghost-bfe-c67="" class="ng-tns-c67-1 ng-trigger ng-trigger-foldPanel ng-trigger-hidePanel ng-star-inserted">
+       <result-panel-folding-button _ngcontent-bfe-c67="" _nghost-bfe-c66="" class="ng-tns-c67-1 ng-star-inserted" style="">
+        <button _ngcontent-bfe-c66="" class="btn_fold expand" type="button">
+         접기
+        </button>
+       </result-panel-folding-button>
+       <!-- -->
+       <div _ngcontent-bfe-c67="" class="panel_wrap ng-tns-c67-1">
+        <router-outlet _ngcontent-bfe-c67="" class="ng-tns-c67-1">
+        </router-outlet>
+        <app-base _nghost-bfe-c80="" class="ng-star-inserted" style="">
+         <search-input-box _ngcontent-bfe-c80="" _nghost-bfe-c77="">
+          <div _ngcontent-bfe-c77="" class="search_wrap">
+           <div _ngcontent-bfe-c77="" class="search_box">
+            <button _ngcontent-bfe-c77="" class="button_search" type="button">
+             검색
+            </button>
+            <div _ngcontent-bfe-c77="" class="input_box">
+             <!-- -->
+             <input _ngcontent-bfe-c77="" autocomplete="off" autofocus="" class="input_search ng-pristine ng-valid ng-touched" id="input_search1679451865027" type="text"/>
+            </div>
+            <button _ngcontent-bfe-c77="" class="button_clear ng-star-inserted" style="" type="button">
+             <span _ngcontent-bfe-c77="" class="blind">
+              삭제
+             </span>
+            </button>
+            <!-- -->
+           </div>
+           <!-- -->
+          </div>
+         </search-input-box>
+         <bubble-filter _ngcontent-bfe-c80="" class="ng-star-inserted" style="visibility: hidden;">
+          <bubble-filter-list _nghost-bfe-c78="" class="ng-star-inserted">
+           <div _ngcontent-bfe-c78="" class="bubble_filter_area">
+            <ul _ngcontent-bfe-c78="" class="bubble_filter_list">
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00025-00087@2x.png" width="20"/>
+               애견동반식당
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00032@2x.png" width="20"/>
+               음식점
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00012@2x.png" width="20"/>
+               카페
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00084@2x.png" width="20"/>
+               펜션
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00082@2x.png" width="20"/>
+               주차장
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00095@2x.png" width="20"/>
+               N주문
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00099@2x.png" width="20"/>
+               편의점
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <li _ngcontent-bfe-c78="" class="bubble_filter_item ng-star-inserted">
+              <button _ngcontent-bfe-c78="" class="bubble_filter ng-star-inserted" type="button">
+               <img _ngcontent-bfe-c78="" alt="" height="20" src="https://map.pstatic.net/res/category/image/00024-00065@2x.png" width="20"/>
+               마트
+               <!-- -->
+              </button>
+              <!-- -->
+             </li>
+             <!-- -->
+            </ul>
+            <div _ngcontent-bfe-c78="" class="more_group ng-star-inserted">
+             <button _ngcontent-bfe-c78="" class="btn_more_filter" type="button">
+              <span _ngcontent-bfe-c78="" class="blind">
+               주변 필터 더보기
+              </span>
+             </button>
+             <!-- -->
+            </div>
+            <!-- -->
+           </div>
+           <!-- -->
+          </bubble-filter-list>
+          <!-- -->
+          <!-- -->
+         </bubble-filter>
+         <!-- -->
+         <router-outlet _ngcontent-bfe-c80="">
+         </router-outlet>
+         <search-layout _nghost-bfe-c139="" class="ng-star-inserted">
+          <!-- -->
+          <h2 _ngcontent-bfe-c139="" class="blind ng-star-inserted">
+           검색
+          </h2>
+          <div _ngcontent-bfe-c139="" class="main -top_space ng-star-inserted">
+           <combined-search-list _ngcontent-bfe-c139="" _nghost-bfe-c137="" style="visibility: visible;">
+            <nm-spinner _ngcontent-bfe-c137="" _nghost-bfe-c51="" class="ng-star-inserted">
+             <strong _ngcontent-bfe-c51="" class="blind">
+              로딩중
+             </strong>
+             <div _ngcontent-bfe-c51="" class="loader">
+              <div _ngcontent-bfe-c51="" class="icon">
+              </div>
+              <div _ngcontent-bfe-c51="" class="icon">
+              </div>
+              <div _ngcontent-bfe-c51="" class="icon">
+              </div>
+             </div>
+            </nm-spinner>
+            <!-- -->
+            <salt-search-list _ngcontent-bfe-c137="" _nghost-bfe-c121="" class="ng-star-inserted" style="visibility: hidden;">
+             <correction-info _ngcontent-bfe-c121="" _nghost-bfe-c111="">
+              <!-- -->
+             </correction-info>
+             <nm-external-frame-bridge _ngcontent-bfe-c121="" style="height: 100%;">
+              <nm-iframe _nghost-bfe-c112="" class="ng-star-inserted" style="height: 100%; pointer-events: auto;">
+               <iframe _ngcontent-bfe-c112="" id="searchIframe" src="about:blank" title="검색어 '염창식당'에 대한 결과">
+               </iframe>
+              </nm-iframe>
+              <!-- -->
+              <!-- -->
+              <!-- -->
+             </nm-external-frame-bridge>
+             <!-- -->
+            </salt-search-list>
+            <!-- -->
+            <!-- -->
+            <!-- -->
+            <!-- -->
+            <!-- -->
+            <!-- -->
+            <!-- -->
+           </combined-search-list>
+          </div>
+          <div _ngcontent-bfe-c139="" class="sub -covered ng-star-inserted">
+           <router-outlet _ngcontent-bfe-c139="">
+           </router-outlet>
+           <entry-layout _nghost-bfe-c143="" class="ng-star-inserted" style="padding-top: 0px;">
+            <router-outlet _ngcontent-bfe-c143="">
+            </router-outlet>
+            <!-- -->
+            <div _ngcontent-bfe-c143="" class="error_area ng-star-inserted">
+             <p _ngcontent-bfe-c143="" class="error_message">
+              해당 장소 정보가 확인되지 않습니다.
+             </p>
+            </div>
+            <!-- -->
+            <!-- -->
+            <!-- -->
+           </entry-layout>
+           <!-- -->
+          </div>
+          <!-- -->
+          <!-- -->
+         </search-layout>
+         <!-- -->
+        </app-base>
+        <!-- -->
+        <!-- -->
+       </div>
+       <!-- -->
+      </shrinkable-layout>
+      <!-- -->
+      <div _ngcontent-bfe-c64="" class="map_box">
+       <maps-controller _ngcontent-bfe-c64="" _nghost-bfe-c46="" class="ng-star-inserted">
+        <!-- -->
+       </maps-controller>
+       <!-- -->
+       <!-- -->
+      </div>
+      <div _ngcontent-bfe-c64="" class="bottom">
+       <bottom-layout _ngcontent-bfe-c143="" _nghost-bfe-c140="" style="justify-content: center; margin-bottom: 50px; margin-left: 390px;">
+        <div _ngcontent-bfe-c140="" class="wrapper">
+         <go-back-btn _ngcontent-bfe-c143="" _nghost-bfe-c141="" style="display: none;">
+          <button _ngcontent-bfe-c141="" class="btn_research" type="button">
+           <span _ngcontent-bfe-c141="" class="btn_text">
+            길찾기로 돌아가기
+           </span>
+          </button>
+         </go-back-btn>
+        </div>
+       </bottom-layout>
+      </div>
+     </div>
+     <!-- -->
+    </div>
+    <!-- -->
+    <message _ngcontent-bfe-c64="" _nghost-bfe-c36="" class="ng-tns-c36-0 ng-trigger ng-trigger-messageTransition ng-star-inserted" style="transform: translate(-50%, 100%); display: none;">
+     <div _ngcontent-bfe-c36="" class="message_area ng-tns-c36-0">
+      <span _ngcontent-bfe-c36="" class="message ng-tns-c36-0">
+      </span>
+     </div>
+     <!-- -->
+    </message>
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+    <!-- -->
+   </layout>
+   <!-- -->
+  </app>
+  <!-- -->
+  <div id="preview_area">
+   <div class="navbar_box">
+    <h1 class="logo_box">
+     <span class="link_logo">
+      <span class="blind">
+       NAVER
+      </span>
+     </span>
+    </h1>
+    <div class="scroll_area">
+     <div class="scroll_box">
+      <ul class="list_navbar">
+       <li class="item_navbar">
+        <span class="link_navbar home">
+         <span class="navbar_text">
+          지도 홈
+         </span>
+        </span>
+       </li>
+       <li class="item_navbar">
+        <span class="link_navbar directions">
+         <span class="navbar_text">
+          길찾기
+         </span>
+        </span>
+       </li>
+       <li class="item_navbar">
+        <span class="link_navbar bus">
+         <span class="navbar_text">
+          버스
+         </span>
+        </span>
+       </li>
+       <li class="item_navbar">
+        <span class="link_navbar subway">
+         <span class="navbar_text">
+          지하철
+         </span>
+        </span>
+       </li>
+       <li class="item_navbar">
+        <span class="link_navbar train">
+         <span class="navbar_text">
+          기차
+         </span>
+        </span>
+       </li>
+       <li class="item_navbar">
+        <span class="link_navbar favorite">
+         <span class="navbar_text">
+          저장
+         </span>
+        </span>
+       </li>
+       <li class="item_navbar">
+        <span class="link_navbar settings">
+         <span class="navbar_text">
+          더보기
+         </span>
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="loading_box">
+   </div>
+  </div>
+  <div class="base_map" id="baseMap">
+  </div>
+  <div id="subwayMap">
+  </div>
+  <div id="_unsupported_browser">
+  </div>
+  <noscript>
+   <div id="no-script">
+    <div class="no-script-message">
+     <div class="title">
+      네이버 지도를 사용하려면 자바스크립트 설정이 필요합니다.
+     </div>
+     <div class="desc">
+      Chrome, Firefox 와 같은 브라우저에서 자바스크립트 기능을 사용 설정하지 않으면 네이버 지도를 볼 수 없습니다.
+     </div>
+     <div class="explain">
+      [예시 : Chrome 브라우저 설정 방법]
+     </div>
+     <ol class="items">
+      <li>
+       Chrome 브라우저 창을 열고, 환경설정을 클릭
+      </li>
+      <li>
+       하단에서 고급 선택
+      </li>
+      <li>
+       ‘개인정보 및 보안’ 에서 콘텐츠 설정을 클릭
+      </li>
+      <li>
+       자바스크립트 클릭 후, 허용으로 설정
+      </li>
+     </ol>
+    </div>
+   </div>
+  </noscript>
+  <script>
+   var ie = (function () {
+        if (window.ActiveXObject === undefined) return null;
+        if (!document.querySelector) return 7;
+        if (!document.addEventListener) return 8;
+        if (!window.atob) return 9;
+        if (!document.__proto__) return 10;
+        return 11;
+      })();
+      if (ie && ie < 11) {
+        location.href = 'https://map.naver.com/v5/unsupported-browser.html';
+      }
+      __Zone_disable_requestAnimationFrame = true;
+      __Zone_disable_on_property = true;
+      __Zone_disable_timers = true;
+      __Zone_disable_XHR = true;
+      __Zone_disable_PromiseRejectionEvent = true;
+      __Zone_disable_crypto = true;
+      __zone_symbol__BLACK_LISTED_EVENTS = [
+        'pointerstart',
+        'pointermove',
+        'pointerend',
+        'pointerout',
+        'pointerover',
+        'mousemove',
+        'mousewheel',
+        'wheel'
+      ];
+      window['__zone_symbol__PASSIVE_EVENTS'] = [
+        'scroll',
+        'message',
+        'mouseout',
+      ];
+      var targets = [window, Worker, Document, HTMLBodyElement, HTMLCanvasElement, HTMLElement];
+      __Zone_ignore_on_properties = [];
+      targets.forEach(function (target) {
+        __Zone_ignore_on_properties.push({
+          target: target,
+          ignoreProperties: [
+            'scroll',
+            'message',
+            'pointermove',
+            'mousemove',
+            'mousewheel',
+            'mouseout',
+            'wheel',
+            'mousewheel'
+          ]
+        });
+      });
+      if (ie) {
+        window.__Zone_enable_cross_context_check = true;
+      }
+  </script>
+  <script src="runtime-es2015.06064bdaa2df7336affa.js" type="module">
+  </script>
+  <script defer="" nomodule="" src="runtime-es5.06064bdaa2df7336affa.js">
+  </script>
+  <script defer="" nomodule="" src="polyfills-es5.674f2ed47e6fc1107d40.js">
+  </script>
+  <script src="polyfills-es2015.539da1e07b18ba53054e.js" type="module">
+  </script>
+  <script defer="" src="scripts.a914ed42010ea07f4620.js">
+  </script>
+  <script src="vendor-es2015.94e950de918941577601.js" type="module">
+  </script>
+  <script defer="" nomodule="" src="vendor-es5.94e950de918941577601.js">
+  </script>
+  <script src="main-es2015.6e935049bc4138fd28a4.js" type="module">
+  </script>
+  <script defer="" nomodule="" src="main-es5.6e935049bc4138fd28a4.js">
+  </script>
+  <script async="" src="https://ssl.pstatic.net/sstatic.map/openapi/maps3.js?time=1679383222758" type="text/javascript">
+  </script>
+  <script async="" src="https://ssl.pstatic.net/sstatic.map/openapi/maps3-gl.js?time=1679383222758" type="text/javascript">
+  </script>
+ </body>
+</html>

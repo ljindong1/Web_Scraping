@@ -22,7 +22,7 @@ restaurant = pd.read_csv('양천구_음식점_20220930.csv', encoding='cp949')
 
 #지역명이 포함된 식당명을 변수로 지정
 names = restaurant['업소명']
-print(names)
+# print(names)
 
 #검색할 식당 데이터와 url을 담을 데이터 프레임 생성
 df = pd.DataFrame(columns=['name', 'naverURL'])
@@ -37,28 +37,36 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-res = driver.page_source  # 페이지 소스 가져오기
-soup = BeautifulSoup(res, 'html.parser')  # html 파싱하여  가져온다
+# res = driver.page_source  # 페이지 소스 가져오기
+# soup = BeautifulSoup(res, 'html.parser')  # html 파싱하여  가져온다
 
 # frame 변경 메소드
-def switch_frame(frame):
-    driver.switch_to.default_content()  # frame 초기화
-    driver.switch_to.frame(frame)  # frame 변경
-    res
-    soup
+# def switch_frame(frame):
+#     driver.switch_to.default_content()  # frame 초기화
+#     driver.switch_to.frame(frame)  # frame 변경
+#     res
+#     soup
 
 for i, keyword in enumerate(df['name'].tolist()):
     # 검색 url 만들기
     naver_map_search_url = f'https://map.naver.com/v5/search/{keyword}/place'  
     # 검색 url 접속 = 검색하기
     driver.get(naver_map_search_url)  
-
-    time.sleep(2) 
-    # 검색 프레임 변경
-    driver.switch_to.frame("searchIframe")
-    time.sleep(1) 
-   
     
+    time.sleep(2) 
+
+    # 검색 프레임 변경
+    iframe = driver.find_element(By.ID, "searchIframe")
+    driver.switch_to.frame(iframe)
+
+    # iframe 요소 내부의 HTML 정보 스크래핑
+    # iframe_html = driver.page_source
+    # soup = BeautifulSoup(iframe_html, "html.parser")
+
+    # driver.switch_to.frame("searchIframe")
+
+    time.sleep(1) 
+        
     try:     
         #식당 정보가 있다면 첫번째 식당의 url을 가져오기
         
