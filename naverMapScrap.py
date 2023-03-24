@@ -16,13 +16,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from tqdm import tqdm 
 import re
-import pyproj
+from pyproj import Transformer
 
-# UTM 좌표계 정보
-utm_zone = 51
-south_hemisphere = False
-utm_proj = pyproj.Proj(proj='utm', zone=utm_zone, south=south_hemisphere)
-
+# 네이버 좌표계 --> WGS84 변환
+transformer = Transformer.from_crs("EPSG:3857", "EPSG:4326")
 
 def checkIsList():
     try:
@@ -46,7 +43,8 @@ def scrapeData(url):
     pattern = r"(\d+\.\d+),(\d+\.\d+)"
     match = re.search(pattern, data_url)
     if match:
-        latitude, longitude  = match.groups()       
+        naverX, naverY  = match.groups()      
+        latitude, longitude = transformer.transform(naverX, naverY) 
     else:
         latitude, longitude = ""
 
