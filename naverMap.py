@@ -13,11 +13,11 @@ def checkIsList(checkCount):
     try:
         driver.switch_to.default_content()
         WebDriverWait(driver,1.5).until(
-        EC.presence_of_element_located((By.ID, searchFrame))
+        EC.presence_of_element_located((By.ID, "searchFrame"))
         )
-        driver.switch_to.frame(searchFrame)    
+        driver.switch_to.frame("searchFrame")    
         WebDriverWait(driver,1).until(
-            EC.presence_of_element_located((By.CLASS_NAME, resultListTitleClass))
+            EC.presence_of_element_located((By.CLASS_NAME, "resultListTitleClass"))
         )
         driver.switch_to.default_content()
         return 0;
@@ -26,11 +26,11 @@ def checkIsList(checkCount):
         try:
             driver.switch_to.default_content()
             WebDriverWait(driver,1.5).until(
-            EC.presence_of_element_located((By.ID, entryFrame))
+            EC.presence_of_element_located((By.ID, "entryFrame"))
             )
-            driver.switch_to.frame(entryFrame)
+            driver.switch_to.frame("entryFrame")
             WebDriverWait(driver,1).until(
-                EC.presence_of_element_located((By.CLASS_NAME, resultTargetTitleDiv))
+                EC.presence_of_element_located((By.CLASS_NAME, "resultTargetTitleDiv"))
             )
             driver.switch_to.default_content()
             return 1
@@ -68,14 +68,14 @@ for i in range(2):
                 #맞는지 검사하고 맞으면 크롤링 진행, 틀리면 
                 #선택하고
                 driver.switch_to.default_content()
-                driver.switch_to.frame(searchFrame)
+                driver.switch_to.frame("searchFrame")
                 #driver.find_element(By.CSS_SELECTOR,resultTitleClick).click()
-                driver.find_element(By.CSS_SELECTOR,resultTitleClick).send_keys(Keys.ENTER)
+                driver.find_element(By.CSS_SELECTOR,"resultTitleClick").send_keys(Keys.ENTER)
                 driver.switch_to.default_content()
                 WebDriverWait(driver,4).until(
-                EC.presence_of_element_located((By.ID, entryFrame))
+                EC.presence_of_element_located((By.ID, "entryFrame"))
                 )
-                driver.switch_to.frame(entryFrame)
+                driver.switch_to.frame("entryFrame")
                 getInfo(row)
                 driver.switch_to.default_content()
                 break
@@ -83,9 +83,9 @@ for i in range(2):
                 #바로 정보뽑기
                 driver.switch_to.default_content()
                 WebDriverWait(driver,4).until(
-                    EC.presence_of_element_located((By.ID, entryFrame))
+                    EC.presence_of_element_located((By.ID, "entryFrame"))
                 )
-                driver.switch_to.frame(entryFrame)
+                driver.switch_to.frame("entryFrame")
                 getInfo(row)
                 break
             elif checkResult ==2:  #처음인데 결과가 안나옴
