@@ -23,9 +23,12 @@ transformer = Transformer.from_crs("EPSG:3857", "EPSG:4326")
 
 def checkIsList():
     try:
-        WebDriverWait(driver, 3).until(EC.visibility_of(driver.find_element(By.ID, "searchIframe"))) 
+        time.sleep(1)
+        WebDriverWait(driver, 5).until(EC.visibility_of(driver.find_element(By.ID, "searchIframe"))) 
+        # print("True")
         return True
     except Exception as e:
+        print('False')
         return False
         #검색결과가 없을때
 
@@ -78,8 +81,8 @@ driver.maximize_window()
 
 driver.implicitly_wait(10) 
 
-for i, keyword in enumerate(df['name'].tolist()):
-    if i == 6: 
+for i, keyword in enumerate(df['name'].tolist()[4:]):
+    if i == 2: 
         break
     
     print(f"====={keyword}=====================================")
